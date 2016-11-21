@@ -1,0 +1,1824 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>CSS3实现MacBook苹果笔记本特效</title>
+</head>
+<style>
+@charset "utf-8";/* margin */
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,img,form,applet,fieldset,legend,button,input,textarea,th,table,tr,td {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+/* body */
+body {
+    position: relative;
+    background: #fff;
+    color: #fff;
+    font-size: 12px;
+    font-family: "微软雅黑";
+}
+ 
+body,div,fieldset,form,h1,h2,h3,h4,h5,h6,html,p {
+    -webkit-text-size-adjust: none;
+}
+/* img */
+img {
+    margin: 0;
+    padding: 0;
+    border: none;
+    vertical-align: top;
+}
+/* div */
+li,ul {
+    display: block;
+    margin: 0 auto;
+    padding: 0 auto;
+    list-style: none;
+    font-family: "Vrinda";
+    outside: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+ 
+.clear {
+    clear: both;
+    width: 100%;
+    height: 0;
+}
+ 
+span,b,i,a,:after,:before {
+    -webkit-transition: all 0.5s;
+}
+/* font */
+a {
+    text-decoration: none;
+}
+ 
+a:hover,a:active,a:focus {
+    text-decoration: none;
+}
+ 
+i {
+    font-style: normal;
+}
+ 
+.board {
+    position: relative;
+    margin: 0 auto;
+    margin-top: 50px;
+    padding: 0 auto;
+    width: 900px;
+    height: 630px;
+    border-radius: 35px;
+    background: rgb(180,160,140);
+    background: -webkit-linear-gradient(60deg,rgba(210,190,165,1) 25%,rgba(250,235,217,1));
+    box-shadow: 0px 5px 6px rgb(160,160,160);
+}
+ 
+.board:before {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    z-index: 999;
+    display: block;
+    margin-left: -563px;
+    width: 1126px;
+    height: 15px;
+    border-bottom: 2px solid #b9a38e;
+    border-radius: 0px 0px 4px 4px;
+    border-top-right-radius: 190px 10px;
+    border-top-left-radius: 190px 10px;
+    background: rgb(210,210,210);
+    background: -webkit-linear-gradient(top,rgb(210,190,165) 50%,rgb(250,235,217));
+    content: '';
+}
+ 
+.blackbar {
+    position: absolute;
+    top: -6px;
+    left: 50%;
+    margin-left: -350px;
+    width: 700px;
+    height: 12px;
+    border: 1px solid #84715e;
+    border-top: none;
+    border-radius: 3px;
+    background: -webkit-linear-gradient(top,rgb(30,30,30) ,rgb(60,60,60) 35%,rgb(100,100,100) 50%,rgb(30,30,30) 65%);
+    background: -linear-gradient(top,rgb(30,30,30) ,rgb(60,60,60) 35%,rgb(100,100,100) 50%,rgb(30,30,30) 65%);
+}
+ 
+.horn {
+    position: absolute;
+    top: 17px;
+    left: 50%;
+    overflow: hidden;
+    margin-left: -347px;
+    width: 694px;
+    height: 30px;
+}
+ 
+.horn ul {
+    float: left;
+    margin: -2px 0 0 -2px;
+    width: 696px;
+    height: 32px;
+}
+ 
+.horn li {
+    float: left;
+    margin: 2px 0 0 2px;
+    width: 2px;
+    height: 2px;
+    background: #c4b098;
+}
+ 
+.keyboard {
+    float: left;
+    margin: 56px 5px 0 5px;
+    width: 890px;
+    height: 346px;
+    border: 1px solid rgb(190,173,148);
+    border-radius: 10px;
+    background: rgba(234,216,194,1);
+    box-shadow: 2px 0px 2px rgb(192,172,147) inset,-2px 2px 3px rgb(192,172,147) inset,1px -0px 0px rgb(192,172,147) inset,0px -2px 3px rgb(213,193,168) inset;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+ 
+.keyboard ul {
+    position: relative;
+    float: left;
+    margin-top: 8px;
+    padding-left: 11px;
+    width: 880px;
+/* border:2px solid black; */
+}
+ 
+.keyboard li {
+    position: relative;
+    float: left;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    width: 54px;
+    height: 54px;
+    border: 1px solid rgb(70,70,70);
+    border-radius: 4px;
+    background: rgb(30,30,30);
+    box-shadow: 1px 0px 0px rgb(0,0,0),0px 1px 0px rgb(0,0,0),-1px 0px 0px rgb(0,0,0),0px -1px 0px rgb(0,0,0);
+    color: rgb(200,200,200);
+    text-align: center;
+    font-size: 14px;
+    line-height: 52px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+ 
+.keyboard li:nth-child(1) {
+    width: 86px;
+    height: 23px;
+    text-align: left;
+    text-indent: 1em;
+    line-height: 22px;
+}
+ 
+.keyboard li:nth-child(2),.keyboard li:nth-child(3),.keyboard li:nth-child(4),.keyboard li:nth-child(5),.keyboard li:nth-child(6),.keyboard li:nth-child(7),.keyboard li:nth-child(8),.keyboard li:nth-child(9),.keyboard li:nth-child(10),.keyboard li:nth-child(11),.keyboard li:nth-child(12),.keyboard li:nth-child(13),.keyboard li:nth-child(14) {
+    width: 53px;
+    height: 23px;
+    line-height: 23px;
+}
+ 
+.keyboard li:nth-child(15),.keyboard li:nth-child(16),.keyboard li:nth-child(17),.keyboard li:nth-child(18),.keyboard li:nth-child(19),.keyboard li:nth-child(20),.keyboard li:nth-child(21),.keyboard li:nth-child(22),.keyboard li:nth-child(23),.keyboard li:nth-child(24),.keyboard li:nth-child(25),.keyboard li:nth-child(26),.keyboard li:nth-child(27),.keyboard li:nth-child(40),.keyboard li:nth-child(41),.keyboard li:nth-child(42),.keyboard li:nth-child(53),.keyboard li:nth-child(54),.keyboard li:nth-child(64),.keyboard li:nth-child(65),.keyboard li:nth-child(66) {
+    padding: 7px 0;
+    height: 40px;
+}
+ 
+.keyboard li:nth-child(15) span,.keyboard li:nth-child(16) span,.keyboard li:nth-child(17) span,.keyboard li:nth-child(18) span,.keyboard li:nth-child(19) span,.keyboard li:nth-child(20) span,.keyboard li:nth-child(21) span,.keyboard li:nth-child(22) span,.keyboard li:nth-child(23) span,.keyboard li:nth-child(24) span,.keyboard li:nth-child(25) span,.keyboard li:nth-child(26) span,.keyboard li:nth-child(27) span,.keyboard li:nth-child(40) span,.keyboard li:nth-child(41) span,.keyboard li:nth-child(42) span,.keyboard li:nth-child(53) span,.keyboard li:nth-child(54) span,.keyboard li:nth-child(64) span,.keyboard li:nth-child(65) span,.keyboard li:nth-child(66) span {
+    float: left;
+    width: 100%;
+    height: 20px;
+    line-height: 20px;
+}
+ 
+.keyboard li:nth-child(28) span,.keyboard li:nth-child(55) span,.keyboard li:nth-child(67) span {
+    float: right;
+    margin-top: 35px;
+    margin-right: 8px;
+    line-height: 14px;
+}
+ 
+.keyboard li:nth-child(29) span,.keyboard li:nth-child(43) span,.keyboard li:nth-child(56) span,.keyboard li:nth-child(68) span,.keyboard li:nth-child(69) span,.keyboard li:nth-child(70) span,.keyboard li:nth-child(71) span,.keyboard li:nth-child(73) span,.keyboard li:nth-child(74) span {
+    float: left;
+    margin-top: 35px;
+    text-indent: 8px;
+    line-height: 14px;
+}
+ 
+.keyboard li:nth-child(28),.keyboard li:nth-child(29) {
+    width: 73px;
+}
+ 
+.keyboard li:nth-child(43),.keyboard li:nth-child(55) {
+    width: 94px;
+}
+ 
+.keyboard li:nth-child(43) i {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 6px;
+    height: 6px;
+    border-radius: 3px;
+    background: #fff;
+}
+ 
+.keyboard li:nth-child(55) i,.keyboard li:nth-child(70) i {
+    position: absolute;
+    top: 5px;
+    right: 8px;
+    font-size: 12px;
+    line-height: 12px;
+}
+ 
+.keyboard li:nth-child(74) i {
+    position: absolute;
+    top: 5px;
+    left: 8px;
+    font-size: 12px;
+    line-height: 12px;
+}
+ 
+.keyboard li:nth-child(56) {
+    width: 124px;
+}
+ 
+.keyboard li:nth-child(67) {
+    width: 125px;
+}
+ 
+.keyboard li:nth-child(71),.keyboard li:nth-child(73) {
+    width: 70px;
+}
+ 
+.keyboard li:nth-child(72) {
+    width: 285px;
+}
+ 
+.keyboard li:nth-child(76),.keyboard li:nth-child(78) {
+    height: 25px;
+    line-height: 25px;
+}
+ 
+.keyboard li:nth-child(78) {
+    position: absolute;
+    right: 68px;
+    bottom: 0;
+}
+ 
+.touch {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    margin-left: -180px;
+    width: 360px;
+    height: 202px;
+    border: 1px solid #c9b59d;
+    border-radius: 8px;
+    background: -webkit-linear-gradient(60deg,rgba(220,200,176,1) 25%,rgba(224,206,182,1));
+    box-shadow: 2px 0px 2px rgb(192,172,147) inset,-2px 1px 2px rgb(192,172,147) inset,1px -0px 0px rgb(192,172,147) inset,0px -1px 2px rgb(213,193,168) inset;
+}
+</style>
+<body>
+<div class="board">
+    <div class="blackbar">
+    </div>
+    <div class="horn">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <div class="keyboard">
+        <ul>
+            <li>esc</li>
+            <li>F1</li>
+            <li>F2</li>
+            <li>F3</li>
+            <li>F4</li>
+            <li>F5</li>
+            <li>F6</li>
+            <li>F7</li>
+            <li>F8</li>
+            <li>F9</li>
+            <li>F10</li>
+            <li>F11</li>
+            <li>F12</li>
+            <li>〇</li>
+            <li><span>~</span><span>`</span></li>
+            <li><span>!</span><span>1</span></li>
+            <li><span>@</span><span>2</span></li>
+            <li><span>#</span><span>3</span></li>
+            <li><span>$</span><span>4</span></li>
+            <li><span>%</span><span>5</span></li>
+            <li><span>^</span><span>6</span></li>
+            <li><span>&</span><span>7</span></li>
+            <li><span>*</span><span>8</span></li>
+            <li><span>(</span><span>9</span></li>
+            <li><span>)</span><span>0</span></li>
+            <li><span>＿</span><span>-</span></li>
+            <li><span>＋</span><span>=</span></li>
+            <li><span>delete</span></li>
+            <li><span>tab</span></li>
+            <li>Q</li>
+            <li>W</li>
+            <li>E</li>
+            <li>R</li>
+            <li>T</li>
+            <li>Y</li>
+            <li>U</li>
+            <li>I</li>
+            <li>O</li>
+            <li>P</li>
+            <li><span>{</span><span>[</span></li>
+            <li><span>}</span><span>]</span></li>
+            <li><span>|</span><span>\</span></li>
+            <li><i></i><span>CapsLock</span></li>
+            <li>A</li>
+            <li>S</li>
+            <li>D</li>
+            <li>F</li>
+            <li>G</li>
+            <li>H</li>
+            <li>J</li>
+            <li>K</li>
+            <li>L</li>
+            <li><span>:</span><span>;</span></li>
+            <li><span>"</span><span>'</span></li>
+            <li><i>enter</i><span>return</span></li>
+            <li><span>shift</span></li>
+            <li>Z</li>
+            <li>X</li>
+            <li>C</li>
+            <li>V</li>
+            <li>B</li>
+            <li>N</li>
+            <li>M</li>
+            <li><span><</span><span>,</span></li>
+            <li><span>></span><span>.</span></li>
+            <li><span>?</span><span>/</span></li>
+            <li><span>shift</span></li>
+            <li><span>fn</span></li>
+            <li><span>control</span></li>
+            <li><i>alt</i><span>option</span></li>
+            <li><span>command</span></li>
+            <li></li>
+            <li><span>command</span></li>
+            <li><i>alt</i><span>option</span></li>
+            <li>◄</li>
+            <li>▲</li>
+            <li>►</li>
+            <li>▼</li>
+        </ul>
+    </div>
+    <div class="touch">
+        <!-- 触摸板 -->
+    </div>
+</div>
+<br>
+<br>
+</body>
+</html>
