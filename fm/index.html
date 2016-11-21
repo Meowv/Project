@@ -1,0 +1,463 @@
+﻿
+
+<!DOCTYPE html>
+<html xmlns="/www.w3.org/1999/xhtml">
+<head id="Head1"><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>
+	阿星Plus-云中漫步
+</title><meta name="Keywords" content="阿星Plus-云中漫步" /><meta name="Description" content="FM音乐电台" /><meta name="Copyright" content="aakuan.cn" /><link href="Images/web.css?v20150217" rel="stylesheet" />
+<link rel="stylesheet" href="css/stylesheets/style.css">
+<script src="js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript">
+function hehe(){
+	var aa="<div style=' position:relative; top:-120px; width:500px; height:200px; margin-left:32%;border-radius:15px; overflow:hidden;  border: 1px solid #CECFD4;-webkit-box-shadow:#666 0px 0px 10px;'><iframe name='iframe_canvas' src='http:\\\\douban.fm/partner/baidu/doubanradio' scrolling='no' frameborder='0' width='500' height='200'  ></iframe></div>";
+	
+	document.getElementById("douban").re
+	document.getElementById("douban").innerHTML=aa;
+	
+	}
+
+
+
+</script>
+
+
+</head>
+<body>
+    <form method="post" action="" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKLTc1NTI0MDUxNmRkhXbaTpIxMPDoysndg51aitx85REO2oAB9WjTm+jKHs4=" />
+</div>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="CA0B0334" />
+</div>
+        <div id="body" >
+
+         
+            <div id="jp_container" role="application" aria-label="media player">
+                <div class="jp-type-playlist">
+                    <div id="jplayer" class="jp-jplayer"></div>
+                    <div class="jp-time">
+                        <span class="jp-current-time" role="timer" aria-label="time"></span><span class="jp-duration" role="timer" aria-label="duration"></span>
+                    </div>
+
+                </div>
+             
+            </div>
+        </div>
+
+
+
+
+
+
+<div id="douban" style="margin:auto">
+
+
+<div class="grid-music-container f-usn">
+    <div class="m-music-play-wrap">
+        <div class="u-cover"></div>
+        <div class="m-now-info">
+            <h1 class="u-music-title"><strong>标题</strong><small>歌手</small></h1>
+            <div class="m-now-controls">
+                <div class="u-control u-process">
+                    <span class="buffer-process"></span>
+                    <span class="current-process"></span>
+                </div>
+                <div class="u-control u-time">00:00/00:00</div>
+                <div class="u-control u-volume">
+                    <div class="volume-process" data-volume="0.50">
+                        <span class="volume-current"></span>
+                        <span class="volume-bar"></span>
+                        <span class="volume-event"></span>
+                    </div>
+                    <a class="volume-control"></a>
+                </div>
+            </div>
+            <div class="m-play-controls">
+                <a class="u-play-btn prev" title="上一曲"></a>
+                <a class="u-play-btn ctrl-play play" title="暂停"></a>
+                <a class="u-play-btn next" title="下一曲"></a>
+				<a class="u-play-btn mode mode-list current" title="列表循环"></a>
+                <a class="u-play-btn mode mode-random" title="随机播放"></a>
+                <a class="u-play-btn mode mode-single" title="单曲循环"></a>
+            </div>
+        </div>
+    </div>
+    <div class="f-cb">&nbsp;</div>
+    <div class="m-music-list-wrap"></div>
+</div>
+<script src="src/js/smusic.min.js"></script>
+<script>
+var musicList = [
+
+	{
+		title : 'Without You',
+		singer : 'Dillon Francis',
+		cover  : 'http://p1.music.126.net/aOGmHYbRz12NuTbsMHJI7w==/2529976256404504.jpg',
+		src    : 'http://m1.music.126.net/E-dfjVTBkVlnSOqEGefwyw==/5913173534253612.mp3'
+	},
+		{
+		title : 'Virus Origi...',
+		singer : 'Martin Garrix',
+		cover  : 'http://p1.music.126.net/EovszKq8rVsWwb1yPRl3gA==/6669637534971197.jpg',
+		src    : 'http://m1.music.126.net/LbMLZkrwsLjdJTma_5t07g==/6664139976831960.mp3'
+	},
+
+	{
+		title : 'Wasting Moo...',
+		singer : 'Sick Individuals',
+		cover  : 'http://p1.music.126.net/OAaeeIE9wtMxDH4ZcAJFlw==/6005532511620779.jpg',
+		src    : 'http://m1.music.126.net/iloUK5nb5wkuZGoZO06Kvw==/6002233976484623.mp3'
+	},
+
+	{
+		title : 'Bright Lights',
+		singer : 'Syn Cole',
+		cover  : 'http://p1.music.126.net/8gPH7B_TeXbzJrqtEPMa_g==/5877989162346518.jpg',
+		src    : 'http://m1.music.126.net/pghiNnSFdOboXGZNwVTMhQ==/6064906139382188.mp3'
+	},
+
+	{
+		title : 'Where Them...',
+		singer : 'Flo Rida',
+		cover  : 'http://p1.music.126.net/rpjeK9mapOfJAVIzdu40eQ==/6625657069198669.jpg',
+		src    : 'http://m1.music.126.net/jFxN0b8VoBxVUFoDXnbjGQ==/2083574534647492.mp3'
+	},
+		{
+		title : 'IGNITE',
+		singer : 'Michael Mind Project',
+		cover  : 'http://p1.music.126.net/71rYccwEjIKAHrHMhxFGfQ==/5774635069308312.jpg',
+		src    : 'http://m1.music.126.net/ERokqQoFYNJi3C1qjKoaUw==/6069304186009827.mp3'
+	},
+
+	{
+		title : 'Keep Our Lov...',
+		singer : 'Afrojack',
+		cover  : 'http://p1.music.126.net/kiI_d6f2YPmSqmNwu_jhEA==/5960452534408399.jpg',
+		src    : 'http://m1.music.126.net/RErp9NjCtgNWSeGDvMnVbw==/6052811511291328.mp3'
+	},
+
+	{
+		title : 'Give Me Every...',
+		singer : 'Pitbull',
+		cover  : 'http://p1.music.126.net/Ts32J6sJYTsYA3TmoUXY4A==/2542070883804465.jpg',
+		src    : 'http://m1.music.126.net/c20PhzGfxxbFWt1F8OgMMA==/1273234464965188.mp3'
+	},
+
+	{
+		title : 'Stay the Ni...',
+		singer : 'Zedd',
+		cover  : 'http://p1.music.126.net/WvfXm9xCcSbfhYavGnBW9w==/5926367673766403.jpg',
+		src    : 'http://m1.music.126.net/-ERHV5DNXxoIkQ1VXv8u6w==/1311717371984265.mp3'
+	},
+
+	{
+		title : 'I Want You...',
+		singer : 'Zedd',
+		cover  : 'http://p1.music.126.net/jIDlEZSojmk1cIgiMmxRmQ==/2536573327934541.jpg',
+		src    : 'http://m1.music.126.net/8fUMjyt8wf97Ox87-ZZa0g==/7826323766786355.mp3'
+	},
+
+	{
+		title : 'Eyes Half...',
+		singer : 'Crywolf',
+		cover  : 'http://p1.music.126.net/sHq8On0tlMDA56ZLL8gbrw==/5998935441671741.jpg',
+		src    : 'http://m1.music.126.net/VDHttTvO_kBiYEzl6HG39A==/5981343255627912.mp3'
+	},
+
+	{
+		title : 'My Sunset ',
+		singer : 'Feint',
+		cover  : 'http://p1.music.126.net/UxMUeh1sLst3Vkma2oFsWQ==/614626999935437.jpg',
+		src    : 'http://m1.music.126.net/7SSa5fN5FkbZHxC560N6Hw==/1295224697536354.mp3'
+	},
+
+	{
+		title : 'Ringtone',
+		singer : 'MetroGnome',
+		cover  : 'http://p1.music.126.net/rRKTWZtkuFdm5pzij_1NfQ==/5947258394929291.jpg',
+		src    : 'http://m1.music.126.net/1YWQu62sfwS_oVg4TiICUw==/5861496487920476.mp3'
+	},
+		{
+		title : 'Blu',
+		singer : 'Mitis',
+		cover  : 'http://p1.music.126.net/0QhW9YGAreMO16iJ6l5F-w==/2246302255592303.jpg',
+		src    : 'http://m1.music.126.net/aJqijgPEIwRvhdCeR9aQew==/3119314488012516.mp3'
+	},
+	{
+		title : 'Innocent Dis...',
+		singer : 'Mitis',
+		cover  : 'http://p1.music.126.net/0QhW9YGAreMO16iJ6l5F-w==/2246302255592303.jpg',
+		src    : 'http://m1.music.126.net/s8uyM6-NZZCMtvXo0Ugg8A==/2799356604344870.mp3'
+	},
+
+{
+		title : 'Endeavors',
+		singer : 'Mitis',
+		cover  : 'http://p1.music.126.net/0QhW9YGAreMO16iJ6l5F-w==/2246302255592303.jpg',
+		src    : 'http://m1.music.126.net/MCAbtTCQPPivZWFkVu7-4g==/3083030604295585.mp3'
+	},
+
+{
+		title : 'The Distance',
+		singer : '月代彩',
+		cover  : 'http://p1.music.126.net/QjCLGJ7jTmNhxzyTCVkP3A==/5736152162226594.jpg',
+		src    : 'http://m1.music.126.net/em-9QLmiSaCDpNzZg_FsTQ==/5750445813388288.mp3'
+	},
+
+{
+		title : 'Scream',
+		singer : 'Usher',
+		cover  : 'http://p1.music.126.net/3DEn3apyx3dDd6TGSh506w==/2540971372812653.jpg',
+		src    : 'http://m1.music.126.net/DYAl8n3lLXoMDy_xcQJsKg==/1090715534766649.mp3'
+	},
+
+{
+		title : 'Ten Feet Tall',
+		singer : 'Afrojack',
+		cover  : 'http://p1.music.126.net/n_pbWtVO3WLUUsCju1jtqA==/2539871860553850.jpg',
+		src    : 'http://m1.music.126.net/ucwxV9e1dz17kcsGLa_MHw==/5989039836531478.mp3'
+	},
+
+{
+		title : 'Illuminate',
+		singer : 'Afrojack',
+		cover  : 'http://p1.music.126.net/kiI_d6f2YPmSqmNwu_jhEA==/5960452534408399.jpg',
+		src    : 'http://m1.music.126.net/Ph6TZVGaHkOaDtHOucx6Sg==/6018726650832640.mp3'
+	},
+	{
+		title : 'Firework',
+		singer : 'Katy Perry',
+		cover  : 'http://p1.music.126.net/cq8PZj_GC6Vi9LP8pGrUVw==/1692148395152781.jpg',
+		src    : 'http://m1.music.126.net/3pB-tRZoga0l19Gc9LU8Ig==/2029698464885829.mp3'
+	},
+
+{
+		title : 'Clarity',
+		singer : 'Zedd',
+		cover  : 'http://p1.music.126.net/OlBzjDbNwho_qiEZnodWUg==/2539871861609412.jpg',
+		src    : 'http://m1.music.126.net/MyWaykZ-XILx4zAk7rTEaw==/1907652674191597.mp3'
+	},
+
+{
+		title : 'GALAXY',
+		singer : 'Ken Arai',
+		cover  : 'http://p1.music.126.net/SVJNKYtlB_n9I7p0017Ndw==/6635552674995921.jpg',
+		src    : 'http://m1.music.126.net/bf1BeqBvMtvdQc8plIn7Tw==/3235862723062694.mp3'
+	},
+
+{
+		title : 'Sunburst ',
+		singer : 'MaKo',
+		cover  : 'http://p1.music.126.net/FGA_RM2Sr14Uhy0z4wUC4w==/3225967116767698.jpg',
+		src    : 'http://m1.music.126.net/hx1lV5_DMGAcsXfNuDx6aA==/2529976257286415.mp3'
+	},
+
+{
+		title : 'Leaving You',
+		singer : 'Audien / Michael',
+		cover  : 'http://p1.music.126.net/JgcNLPPUvF1hHxPoSN6Ifg==/2533274790580833.jpg',
+		src    : 'http://m1.music.126.net/E4oQ14HgWdfDuBr407TL0Q==/5797724813344402.mp3'
+	},
+
+{
+		title : 'Friends ',
+		singer : 'ThimLife',
+		cover  : 'http://p1.music.126.net/I1Wu3PY_SQ-E0A-6YkD0nQ==/3225967119013435.jpg',
+		src    : 'http://m1.music.126.net/5i6Ko9PWkKYJGrbRhIXJDg==/6624557558863533.mp3'
+	},
+
+{
+		title : 'A Town Ca...',
+		singer : 'Zac Barnett',
+		cover  : 'http://p1.music.126.net/Q0k-V6tFmnolDzPsb7sEwg==/5866994046057442.jpg',
+		src    : 'http://m1.music.126.net/qQCuHRFd-IDye9iJD5VJWA==/5993437883324489.mp3'
+	},
+
+{
+		title : 'Brighter',
+		singer : 'The Two Friends',
+		cover  : 'http://p1.music.126.net/IpIHhMrNZwWha_hiaNyY9A==/2537672839164775.jpg',
+		src    : 'http://m1.music.126.net/n4VCr_aTLpB7SI3dwW9UzA==/3233663700423023.mp3'
+	},
+
+{
+		title : 'River Flo...',
+		singer : 'Mark Pride',
+		cover  : 'http://p1.music.126.net/VEVDZhxhSzJyLwZ-R0lvFQ==/1761417627708961.jpg',
+		src    : 'http://m1.music.126.net/mmI0IqladI65DqTdKT24ag==/2128654511387653.mp3'
+	},
+
+{
+		title : 'Verge',
+		singer : 'Owl City',
+		cover  : 'http://p1.music.126.net/91VrqTL8imc03lUrSyeyJQ==/7703178465823309.jpg',
+		src    : 'http://m1.music.126.net/2SvPeTljWmqhhKGFZmPl9A==/2891715582491780.mp3'
+	},
+
+{
+		title : 'Beautiful Times ',
+		singer : 'Owl City',
+		cover  : 'http://p1.music.126.net/fx4v-Rop1maKjnXFI_3uFA==/6044015418094279.jpg',
+		src    : 'http://m1.music.126.net/6hU0ZqMbimfPBAtbTxA4sw==/5964850580820718.mp3'
+	},
+
+{
+		title : 'Galaxies',
+		singer : 'Owl City',
+		cover  : 'http://p1.music.126.net/RkMONSGJ6taQngTKSOsGMw==/5974746185770393.jpg',
+		src    : 'http://m1.music.126.net/JQh4rsr0oYMKSAeVyXOZXQ==/5963751069502365.mp3'
+	},
+{
+		title : 'Umbrella Beach',
+		singer : 'Owl City',
+		cover  : 'http://p1.music.126.net/ULHpWQwg4KH7ICulgowPFA==/2534374303375900.jpg',
+		src    : 'http://m1.music.126.net/Ma397661CMiI-hHT8jVdiw==/1265537883572542.mp3'
+	},
+
+	{
+		title : 'Circle Track ',
+		singer : 'Arston,Jake Reese',
+		cover  : 'http://p1.music.126.net/6K4OOdp8_yylWre-mFO2pg==/6646547790045177.jpg',
+		src    : 'http://m1.music.126.net/hQ4IYOSm8_npKsYS03k7lg==/6626756580806029.mp3'
+	},
+	{
+		title : 'Every Chance...',
+		singer : 'David Guetta',
+		cover  : 'http://p1.music.126.net/qFDEUg09Vj7tp7hTEF4ifg==/681697209229626.jpg',
+		src    : 'http://tsmusic24.tc.qq.com/5207456.mp3'
+	},	
+	{
+		title : 'Alone',
+		singer : 'Armin van Buuren',
+		cover  : 'http://p1.music.126.net/3sDtSglgsHmPDhtMARUUyg==/2536573325940856.jpg',
+		src    : 'http://m1.music.126.net/X59oxYXdyPH4gkgtzRjFLw==/5992338371418224.mp3'
+	},
+	{
+		title : 'Youtopia',
+		singer : 'Armin van Buuren',
+		cover  : 'http://p1.music.126.net/lkM-hECLezPlwIojyvzEaw==/6642149743977194.jpg',
+		src    : 'http://tsmusic24.tc.qq.com/737866.mp3'
+	}
+,
+	{
+		title : 'A Sky Full Of...',
+		singer : 'Coldplay',
+		cover  : 'http://p1.music.126.net/JuxMhS9Uy-d_tNRUvZhmgg==/5929666208821819.jpg',
+		src    : 'http://tsmusic24.tc.qq.com/7067925.mp3'
+	}
+,
+	{
+		title : 'Born (Original Mix) ',
+		singer : 'Mitis',
+		cover  : 'http://p1.music.126.net/0QhW9YGAreMO16iJ6l5F-w==/2246302255592303.jpg',
+		src    : 'http://m1.music.126.net/vL4E8nTFHYcJJYnDXK-36Q==/3178688115913230.mp3'
+	}
+,
+	{
+		title : '寄生兽 Remix',
+		singer : 'Dubstep',
+		cover  : 'http://p1.music.126.net/mGyMOMEDh2CueZCyqQwCOw==/3244658815977801.jpg',
+		src    : 'http://m1.music.126.net/W3QE-8-7cypgblLmfVME_w==/3223768095131431.mp3'
+	}
+,
+	{
+		title : 'Life',
+		singer : '7obu',
+		cover  : 'http://p1.music.126.net/qTzLUIvrGh88V7Weycn1yA==/6027522744179563.jpg',
+		src    : 'http://m1.music.126.net/hwwAJKEl8RkZMPhAuRzdvg==/5942860348544233.mp3'
+	}
+	,
+	{
+		title : 'Imperfection',
+		singer : 'Approaching Nirvana',
+		cover  : 'http://p1.music.126.net/pHVyZy81UdLTtX0cSkwApQ==/2532175278948459.jpg',
+		src    : 'http://m1.music.126.net/7gPDR0D6x9QyFgDMkykOsg==/5718559976120783.mp3'
+	}
+	,
+	{
+		title : 'Titanium',
+		singer : 'David Guetta,Sia',
+		cover  : 'http://p1.music.126.net/JXBip73Gnu5Wfx42OAbWKg==/1700944488175683.jpg',
+		src    : 'http://m1.music.126.net/KnatP3kp_-qNnYRuRVE-aQ==/1985717999775330.mp3'
+	}
+];
+new SMusic({
+	musicList:musicList
+});
+</script>
+
+
+<link rel="stylesheet" href="src/css/smusic.css"/>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div style=" position:relative; top:-180px; margin:auto;width:500px; height:40px">
+
+
+
+
+           <a style="text-align:center"  href="douban.html" class="btn hint  hint-top" data-hint="歌曲不合口味？点击更换豆瓣电台。"><span>_</span>    豆瓣电台</a>
+                   &nbsp;  &nbsp;  &nbsp; <a style="text-align:center" href="http://meowv.com"  target="_blank"  class="btn hint  hint-top" data-hint="首页是我的博客，就留在这里听听歌吧。"><span>_</span>返回首页</a>
+  <link rel="stylesheet" href="css/style.css" media="screen" type="text/css" />
+  
+</div>
+
+
+        <div style="color:gray; font-family:微软雅黑; font-size:14px; position:relative; top:130px" >
+           &copy; 2015 Meowv.Com 云中漫步  QQ：494910887 邮箱：Hackxing@foxmail.com  <a style="color:gray; font-family:微软雅黑; font-size:14px;a:hover:black" target="_blank" href="http://494910887.qzone.qq.com/" title="留言给我">给我留言</a> &nbsp;&nbsp;&nbsp;<a style="color:gray; font-family:微软雅黑; font-size:14px;a:hover:black" target="_blank" href="http://weibo.com/Tencentgou" title="访问微博">作者微博 &nbsp;&nbsp;</a><script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1255774534'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1255774534%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+        </div>
+    </form>	
+    </body>
+	</html>
+    <script type="text/javascript" src="Images/jquery.js"></script>
+    <script type="text/javascript" src="Images/ThreeWebGL.js"></script>
+    <script type="text/javascript" src="Images/ThreeExtras.js"></script>
+    <script type="text/javascript" src="Images/Detector.js"></script>
+    <script type="text/javascript" src="Images/RequestAnimationFrame.js"></script>
+    <script id="vs" type="x-shader/x-vertex">
+			varying vec2 vUv;
+			void main() {
+				vUv = uv;
+				gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
+			}
+    </script>
+    <script id="fs" type="x-shader/x-fragment">
+			uniform sampler2D map;
+			uniform vec3 fogColor;
+			uniform float fogNear;
+			uniform float fogFar;
+			varying vec2 vUv;
+			void main() {
+				float depth = gl_FragCoord.z / gl_FragCoord.w;
+				float fogFactor = smoothstep( fogNear, fogFar, depth );
+				gl_FragColor = texture2D( map, vUv );
+				gl_FragColor.w *= pow( gl_FragCoord.z, 20.0 );
+				gl_FragColor = mix( gl_FragColor, vec4( fogColor, gl_FragColor.w ), fogFactor );
+			}
+    </script>
+    <script type="text/javascript" src="Images/cloud.js"></script>
+    <script type="text/javascript" src="Images/player.js">
