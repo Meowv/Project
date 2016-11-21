@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/unslider.css">
+	<style>
+		*{margin: 0;padding: 0;}
+	</style>
+</head>
+<body>
+	<div class="banner">
+		<ul>
+			<li><img src="img/1.jpg" alt=""></li>
+			<li><img src="img/2.jpg" alt=""></li>
+			<li><img src="img/3.jpg" alt=""></li>
+			<li><img src="img/4.jpg" alt=""></li>
+		</ul>
+	</div>
+</body>
+</html>
+<script src="js/jquery.min.js"></script>
+<script src="js/unslider-min.js"></script>
+<script type="text/javascript" src="js/jquery.event.move.js"></script>
+<script type="text/javascript" src="js/jquery.event.swipe.js"></script>
+<script>
+	$(function() {
+	    $('.banner').unslider({
+			speed : 1000,
+            delay : 5000,
+            nav : true,
+            arrows : false,
+            autoplay : true,
+            fluid:true,
+            keys:true,
+		});
+	});
+</script>
