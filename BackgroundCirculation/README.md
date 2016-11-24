@@ -1,0 +1,77 @@
+#BackgroundCirculation
+
+###使用方法
+
+1.引用任何一个版本的jquery文件
+
+2.将Background.js引入文档中
+
+3.CSS部分
+```
+		body{overflow:-Scroll;overflow:hidden;}
+		#Background{width:100%; height:100%; z-index:-999; position:absolute; top:0px; left:0px;}
+		#Background img{width:100%; height:100%; display:none; position:absolute;}
+		#login{background:#FFF; width:300px; height:300px; position:absolute; top:200px; left:200px;}
+```
+
+4.JS部分
+```
+$(document).ready(function(){
+    //场景动画类型：1拉近 2拉远 3幻灯片显示 
+    将Background(2,10000); //运行（动画类型，时间）
+})
+```
+
+5.div部分
+```
+<div id="Background">
+		<img src="img/0.jpg" name="1">
+		<img src="img/1.jpg" name="2">
+		<img src="img/2.jpg" name="3">
+		<img src="img/3.jpg" name="4">
+    <!-- <img src="img/4.jpg" name="5"> 无限递增...-->
+</div>
+```
+
+6.案例DOM
+```
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Background circulation</title>
+	<style>
+		*{margin:0px; padding:0px;}
+		body{overflow:-Scroll;overflow:hidden;}
+		.comments{ background-image: url('img/del.png'); text-align: center; margin: 300px auto; padding: 20px; width: 60%; border-radius: 30px; }
+		#Background{width:100%; height:100%; z-index:-999; position:absolute; top:0px; left:0px;}
+		#Background img{width:100%; height:100%; display:none; position:absolute;}
+		#login{background:#FFF; width:300px; height:300px; position:absolute; top:200px; left:200px;}
+	</style>
+</head>
+<body>
+	<div class="comments">
+		<h2>Background circulation</h2><br/><br/>
+	    <h1>背景循环</h1><br/><br/>
+	    <p>超简单的背景动画文件，代码就一句，Background(您需要的效果，速度);</p><br/>
+	    <p>只需把图片放在下边的Div中，就可按照您向要的方式展示您的图片。</p><br/>
+	    <p>效果包含拉近，拉远，切换……</p>
+	</div>
+	<div id="Background">
+		<img src="img/0.jpg" name="1">
+		<img src="img/1.jpg" name="2">
+		<img src="img/2.jpg" name="3">
+		<img src="img/3.jpg" name="4">
+	</div>
+</body>
+</html>
+<script src="js/jquery.min.js"></script>
+<script src="js/Background.js"></script>
+<script>
+	$(document).ready(function(){
+		/* 场景动画类型：【1】拉近【2】拉远【3】幻灯片显示 */
+		Background(1,10000);
+	})
+</script>
+```
