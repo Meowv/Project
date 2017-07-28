@@ -5,7 +5,7 @@ function column(img, chance, type) {
 }
 
 function dispColumn() {
-	with(this)
+	with (this)
 	switch (type) {
 		case "img":
 			document.getElementById("CAN").innerHTML += "<img src=" + img + ">";
