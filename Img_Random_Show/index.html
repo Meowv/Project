@@ -32,8 +32,7 @@ function dispColumn() {
 column.prototype.dispColumn = dispColumn;
 columns = new Array();
 columns[0] = new column("http://lorempixel.com/160/110/", getRandom(1, 20), "img");
-columns[1] = new column("https://unsplash.it/160/110/?random", getRandom(1, 20), "img");
-
+columns[1] = new column("http://lorempixel.com/160/110/", getRandom(1, 20), "img");
 sum_of_all_chances = 0;
 for (i = 0; i < columns.length; i++) {
 	sum_of_all_chances += columns[i].chance;
