@@ -1,6 +1,5 @@
-function column(img, url, chance, type) {
+function column(img, chance, type) {
 	this.img = img;
-	this.url = url;
 	this.chance = chance;
 	this.type = type;
 }
@@ -24,10 +23,8 @@ function dispColumn() {
 
 column.prototype.dispColumn = dispColumn;
 columns = new Array();
-columns[0] = new column("https://meowv.github.io/Project/Banner_Demo/img/1.jpg", "http://meowv.com", getRandom(1, 20), "img");
-columns[1] = new column("https://meowv.github.io/Project/Banner_Demo/img/2.jpg", "http://meowv.com", getRandom(1, 20), "img");
-columns[2] = new column("https://meowv.github.io/Project/Banner_Demo/img/3.jpg", "http://meowv.com", getRandom(1, 20), "img");
-columns[3] = new column("https://meowv.github.io/Project/Banner_Demo/img/4.jpg", "http://meowv.com", getRandom(1, 20), "img");
+columns[0] = new column("http://lorempixel.com/160/110/", getRandom(1, 20), "img");
+columns[1] = new column("https://unsplash.it/160/110/?random", getRandom(1, 20), "img");
 
 sum_of_all_chances = 0;
 for (i = 0; i < columns.length; i++) {
