@@ -8,14 +8,8 @@ function dispColumn() {
 	with(this)
 	switch (type) {
 		case "img":
-			document.getElementById("CAN").innerHTML += "<a href=" + url + " target=_blank><img src=" + img + "></a>";
+			document.getElementById("CAN").innerHTML += "<img src=" + img + ">";
 			break;
-			// case "html":
-			// 	document.write("");
-			// 	break;
-			// case "flash":
-			// 	document.write("");
-			// 	break;
 		default:
 			document.write("");
 	}
