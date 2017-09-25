@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    .hs_kw0_mainpl::before {
+        content: '获取';
+    }
+
+    .hs_kw1_mainpl::before {
+        content: '伪类';
+    }
+
+    .hs_kw2_mainpl::before {
+        content: '的值';
+    }
+    </style>
+</head>
+
+<body>
+    <div id="gallery-selector">
+        <div class="ahe__text">
+            <p>
+                <span class="hs_kw0_mainpl"></span>Css<span class="hs_kw1_mainpl"></span>Content<span class="hs_kw2_mainpl"></span>，<span class="hs_kw0_mainpl"></span>
+            </p>
+        </div>
+        <div class="ahe__text">
+            <p>
+                <span class="hs_kw0_mainpl"></span>Css<span class="hs_kw1_mainpl"></span>Content<span class="hs_kw2_mainpl"></span>，<span class="hs_kw0_mainpl"></span><span class="hs_kw0_mainpl"></span>
+            </p>
+        </div>
+        <div class="ahe__text">
+            <p>
+                <span class="hs_kw0_mainpl"></span>Css<span class="hs_kw1_mainpl"></span>Content<span class="hs_kw2_mainpl"></span>，<span class="hs_kw0_mainpl"></span><span class="hs_kw0_mainpl"></span><span class="hs_kw0_mainpl"></span><span class="hs_kw0_mainpl"></span>
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+<script>
+for (var i = 0; i < $("#gallery-selector .ahe__text").length; i++) {
+
+    // 获取带html的段落文本
+    var result = $("#gallery-selector .ahe__text:nth(" + i + ") p").html();
+
+    for (var j = 0; j < $("#gallery-selector .ahe__text:nth(" + i + ") p span").length; j++) {
+
+        // span的className
+        var spanClass = $("#gallery-selector .ahe__text:nth(" + i + ") p span:nth(" + j + ")").attr("class");
+
+        // 获取当前span的伪类content
+        var content = window.getComputedStyle(document.querySelector("." + spanClass), '::before').getPropertyValue('content').replace(/\"/g, "");
+        
+        // 替换html
+        result = result.replace("<span class=\"" + spanClass + "\"></span>", content).trim();
+    }
+
+    // 打印结果
+    console.log(result);
+}
+</script>
